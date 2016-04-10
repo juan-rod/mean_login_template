@@ -1,19 +1,50 @@
-var app = angular.module("uPick", ['ngResource','ngRoute']);
+var app = angular.module("uPick", ['ngRoute','ui.bootstrap','ngFitText','geolocation']);
 
 
-angular.module("uPick").config(['$routeProvider','$locationProvider',
-  function($routeProvider,$locationProvider){
-
-  	$locationProvider.html5Mode(true); //might not need this bc i'm using geolocation
-  	
-  	$routeProvider
-  		.when('/',{
-        templateUrl : "/partials/main",
-        controller : "mainCtrl"
-      })
+  app.config(['$routeProvider',
+    function($routeProvider){
+      $routeProvider
+       .when('/',{
+          templateUrl : "/partials/main.html",
+          controller : ""
+        })
+        // .when('/sidePanel',{
+        //   templateUrl : "./partials/sidePanel.html",
+        //   controller : "mainCtrl"
+        // })
+        // .when('/main',{
+        //   templateUrl : "./partials/main.html",
+        //   controller : "mainCtrl"
+        // })
+        //  .when('/nearYou',{
+        //   templateUrl : "./partials/nearYou.html",
+        //   controller : "addUserFormCtrl"
+        //         })
+        //   .when('/sidePanel',{
+        //   templateUrl : "./partials/sidePanel.html",
+        //   controller : "LoginCtrl"
+        // })
+        //   .when('/win',{
+        //   templateUrl : "partials/win.html",
+        //   controller : "winCtrl"
+        // })
+        .otherwise({
+          redirectTo: '/'
+        });
+     
     }
   ]);
 
-angular.module("uPick").controller('mainCtrl',function($scope){
-	$scope.myVar = 'Hello Angular';
-});
+// var app = angular.module("uPick", ['ngResource','ngRoute']);
+
+
+// angular.module("uPick").config(['$routeProvider',
+//   function($routeProvider){
+  	
+//   	$routeProvider
+//   		.when('/',{
+//         templateUrl : "./partials/main.html",
+//         controller : "mainCtrl"
+//       })
+//     }
+//   ]);
