@@ -3,12 +3,12 @@ var rootPath = path.normalize(__dirname + '/../../');
 
 module.exports = {
 	development : {
-		db: 'mongodb://localhost/uPickv2',
+		db: 'mongodb://localhost/void',
 		rootPath: rootPath,
-		port: process.env.PORT || 3030
+		port: process.env.PORT || 3031
 	},
 	production: {
-		db: 'mongodb://juanrod:upickv2@ds011228.mlab.com:11228/upickv2',
+		db: 'mongodb://voidUser:voidUser#123@ds047652.mlab.com:47652/void',
 		rootPath: rootPath,
 		port: process.env.PORT || 80
 	}

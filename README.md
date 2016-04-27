@@ -5,7 +5,7 @@ you still need to create a db with mlab.com and you need to connect to your serv
 2. amazon web services=>plan=> single node => sandbox
 3. click on database
 4. click users => add users => add that info to the server.js connection string
-5. check to see it's connected by typing 'mongo ds011228.mlab.com:11228/{db name} -u {db user} -p {db password}'
+5. check to see it's connected by typing 'mongo ds011228.mlab.com:11228/{db name} -u {voidUser} -p {voidUser#123}'
 6.push to heroku
 7. git status => add => commit
 8. heroku login

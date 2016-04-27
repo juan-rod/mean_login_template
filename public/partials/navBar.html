@@ -1,0 +1,34 @@
+<div id="navbar navbar-fixed-top">
+	<ul class="nav navbar-nav navbar-right" ng-hide="identity.isAuthenticated()">
+	  <li class="dropdown" id="menuLogin">
+	    <a class="dropdown-toggle" href="" data-toggle="dropdown" >
+	    	Login
+	    	<b class="caret"></b>
+	    </a>
+	    <ul class="dropdown-menu">
+    			<li>
+    				<login-widget></login-widget>
+    				
+    			</li>
+    		</ul>
+	  </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" ng-show="identity.isAuthenticated()">
+    	<li class="dropdown">
+    		<a class="dropdown-toggle" href="" data-toggle="dropdown">
+    			{{identity.currentUser.firstName + " " + identity.currentUser.lastName}}
+    			<b class="caret"></b>
+    		</a>
+    		<ul class="dropdown-menu">
+    			<li ng-show="identity.currentUser.isAdmin()">
+    				<a href="/admin/users" >User Admin</a>
+    			</li>
+    			<li>
+    				<a href="" ng-click="signout()">Sign Out</a>
+    			</li>
+    		</ul>
+    	</li>
+
+    </ul>
+
+</div>

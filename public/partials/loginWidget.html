@@ -1,0 +1,19 @@
+<div class="login-page">
+  <div class="form" ng-hide="identity.isAuthenticated()">
+    <form class="register-form">
+      <input type="text" placeholder="name" ng-model="name"/>
+      <input type="password" placeholder="password" ng-model="password"/>
+      <input type="text" placeholder="email address" ng-model="email"/>
+      <button>create</button>
+      <p class="message">Already registered? <a href="#">Sign In</a></p>
+    </form>
+    <form class="login-form">
+      <input type="text" placeholder="username" ng-model="username"/>
+      <input type="password" placeholder="password" ng-model="password"/>
+      <a href="#main">
+        <button ng-click="login(username, password)">login</button>
+      </a>
+      <p class="message">Not registered? <a href="#">Create an account</a></p>
+    </form>
+  </div>
+</div>

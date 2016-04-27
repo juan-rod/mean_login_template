@@ -1,6 +1,9 @@
 var express = require('express'),
 	stylus = require('stylus'),
+	passport = require('passport'),
 	logger = require('morgan'),
+	cookieParser = require('cookie-parser'),
+	session = require('express-session'),
 	bodyParser = require('body-parser');
 
 module.exports = function(app, config){
@@ -15,8 +18,12 @@ module.exports = function(app, config){
 
 	// app.use('public/vendor',  express.static(config.rootPath + '/vendor')); 
 	app.use(logger('dev'));
+	app.use(cookieParser());
 	app.use(bodyParser.json());
-	app.use(bodyParser.urlencoded({extended: true}));   
+	app.use(bodyParser.urlencoded({extended: true}));
+	app.use(session({secret:'into the void',resave:false,saveUninitialized:false}));   
+	app.use(passport.initialize());
+	app.use(passport.session());
 	app.use(stylus.middleware(
 		{
 			src: config.rootPath + '/public',

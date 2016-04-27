@@ -1,50 +1,40 @@
-var app = angular.module("uPick", ['ngRoute','ui.bootstrap','ngFitText','geolocation']);
+var app = angular.module("void", ['ngRoute','ui.bootstrap','ngFitText', 'ngResource']);
 
 
-  app.config(['$routeProvider',
-    function($routeProvider){
+  app.config(['$routeProvider','$locationProvider',
+    function($routeProvider, $locationProvider){
+
+      var routeRoleChecks = {
+           admin: {
+              auth: function(mvAuth) {
+                return mvAuth.authorizeCurrentUserForRoute('admin');              
+              }
+            }
+          };
+
       $routeProvider
        .when('/',{
           templateUrl : "/partials/main.html",
-          controller : ""
+          controller : "mainCtrl"
         })
-        // .when('/sidePanel',{
-        //   templateUrl : "./partials/sidePanel.html",
-        //   controller : "mainCtrl"
-        // })
-        // .when('/main',{
-        //   templateUrl : "./partials/main.html",
-        //   controller : "mainCtrl"
-        // })
-        //  .when('/nearYou',{
-        //   templateUrl : "./partials/nearYou.html",
-        //   controller : "addUserFormCtrl"
-        //         })
-        //   .when('/sidePanel',{
-        //   templateUrl : "./partials/sidePanel.html",
-        //   controller : "LoginCtrl"
-        // })
-        //   .when('/win',{
-        //   templateUrl : "partials/win.html",
-        //   controller : "winCtrl"
-        // })
+        .when('/admin/users',{
+          templateUrl : "/partials/admin/user-list.html",
+          controller : "mvUserListCtrl",
+          resolve: routeRoleChecks.admin
+        }) 
         .otherwise({
           redirectTo: '/'
         });
-     
+
+      $locationProvider.html5Mode(true);
     }
   ]);
 
-// var app = angular.module("uPick", ['ngResource','ngRoute']);
+app.run(function($rootScope, $location) {
+  $rootScope.$on('$routeChangeError', function(evt,current,previous,rejection) {
+    if(rejection === 'not authorized') {
+      $location.path('/');
 
-
-// angular.module("uPick").config(['$routeProvider',
-//   function($routeProvider){
-  	
-//   	$routeProvider
-//   		.when('/',{
-//         templateUrl : "./partials/main.html",
-//         controller : "mainCtrl"
-//       })
-//     }
-//   ]);
+    }
+  });
+});
