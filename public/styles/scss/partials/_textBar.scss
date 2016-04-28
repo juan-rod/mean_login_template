@@ -1,0 +1,78 @@
+$tl: 0.6s;
+
+.mainTextArea{
+	/*border: 3px solid blue;*/
+	position: absolute;
+	margin: auto;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 40%;
+	height: 15%;
+	min-height: 165px;
+	
+
+	.text-box {
+		transition: width $tl, border-radius $tl, background $tl, box-shadow $tl;
+		width: 150px;
+		height: 150px;
+		font-size: 4em;
+		color:black;
+		background: #ebebeb;
+		border-radius: 50%;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		border:none;
+
+		&:hover {
+			color:white;
+			background: #c8c8c8;
+			box-shadow: 0 0 0 5px #3d4752;
+
+			& + label .pencil-icon {
+				color: white;
+			}
+		}
+		&:focus {
+			transition: width $tl cubic-bezier(0,1.22,.66,1.39), border-radius $tl, background $tl;
+			border:none;
+			outline:none;
+			box-shadow: none;
+			width:100%;
+			border-radius: 0;
+			background:rgb(235, 235, 235);
+    		color: black;
+
+    		& + label .pencil-icon {
+    			display:none;
+
+    		}
+		}
+	}
+	label {
+		width: 10px;
+		height: 10px;
+		position: absolute;
+		margin: auto;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		/*z-index: -10;*/
+	}
+		.pencil-icon {
+			/*border: 1px solid black;*/
+			font-size: 3em;
+			position: relative;
+		  	display:table;
+			margin:0 auto;	
+			top: -20;
+   			right: 20;
+    		z-index: 1;
+		}
+}

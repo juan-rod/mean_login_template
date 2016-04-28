@@ -86,7 +86,70 @@
   border: 2px solid black;
   height: 10vh; }
 
+.mainTextArea {
+  /*border: 3px solid blue;*/
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 40%;
+  height: 15%;
+  min-height: 165px; }
+  .mainTextArea .text-box {
+    transition: width 0.6s, border-radius 0.6s, background 0.6s, box-shadow 0.6s;
+    width: 150px;
+    height: 150px;
+    font-size: 4em;
+    color: black;
+    background: #ebebeb;
+    border-radius: 50%;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: none; }
+    .mainTextArea .text-box:hover {
+      color: white;
+      background: #c8c8c8;
+      box-shadow: 0 0 0 5px #3d4752; }
+      .mainTextArea .text-box:hover + label .pencil-icon {
+        color: white; }
+    .mainTextArea .text-box:focus {
+      transition: width 0.6s cubic-bezier(0, 1.22, 0.66, 1.39), border-radius 0.6s, background 0.6s;
+      border: none;
+      outline: none;
+      box-shadow: none;
+      width: 100%;
+      border-radius: 0;
+      background: #ebebeb;
+      color: black; }
+      .mainTextArea .text-box:focus + label .pencil-icon {
+        display: none; }
+  .mainTextArea label {
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*z-index: -10;*/ }
+  .mainTextArea .pencil-icon {
+    /*border: 1px solid black;*/
+    font-size: 3em;
+    position: relative;
+    display: table;
+    margin: 0 auto;
+    top: -20;
+    right: 20;
+    z-index: 1; }
+
 body {
-  background-color: black; }
+  background-color: white; }
 
 /*# sourceMappingURL=main.css.map */
