@@ -4,7 +4,8 @@ var express = require('express'),
 	logger = require('morgan'),
 	cookieParser = require('cookie-parser'),
 	session = require('express-session'),
-	bodyParser = require('body-parser');
+	bodyParser = require('body-parser'),
+	ejs = require('ejs');
 
 module.exports = function(app, config){
 
@@ -14,7 +15,7 @@ module.exports = function(app, config){
 
 	app.set('public', config.rootPath + '/public');
 	app.set('view engine', 'html');
-	app.engine('html', require('ejs').renderFile);
+	app.engine('html', ejs.renderFile);
 
 	// app.use('public/vendor',  express.static(config.rootPath + '/vendor')); 
 	app.use(logger('dev'));

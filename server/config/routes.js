@@ -22,6 +22,6 @@ module.exports = function(app){
 
 	app.get('/', function(req, res){
 		console.log(" res ",res);
-		res.render('index');
+		res.render('index.html');
 	});
 }
