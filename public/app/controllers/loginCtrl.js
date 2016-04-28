@@ -1,5 +1,6 @@
 app.controller('loginCtrl', function($scope, $http, $rootScope, loginNotifier, identity, mvAuth, $location){
 
+	$scope.createAccount = false;
 	$scope.identity = identity;
 	$scope.login = function(username,password) {
 		mvAuth.authenticateUser(username,password).then(function(success) {

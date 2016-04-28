@@ -13,3 +13,5 @@ you still need to create a db with mlab.com and you need to connect to your serv
 11. heroku ps:scale web=1
 12. git push heroku master
 13. heroku open
+14. Well, if you're working on a branch you actually need to run
+		git push heroku <your branch>:master

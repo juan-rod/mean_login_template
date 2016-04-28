@@ -18,7 +18,10 @@
   margin: 0 auto 100px;
   padding: 45px;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  /* .register-form {
+     display: none;
+   }*/ }
   .form input {
     outline: 0;
     background: #f2f2f2;
@@ -47,8 +50,6 @@
     .form .message a {
       color: #4CAF50;
       text-decoration: none; }
-  .form .register-form {
-    display: none; }
 
 .form button:hover, .form button:active, .form button:focus {
   background: #43A047; }
