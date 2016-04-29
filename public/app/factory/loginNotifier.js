@@ -5,6 +5,10 @@ app.factory('loginNotifier', function(toastr) {
 		notify: function(msg) {
 			toastr.success(msg);
 			console.log(msg);
+		},
+		error: function(msg) {
+			toastr.error(msg);
+			console.log(msg);
 		}
 	}
 })

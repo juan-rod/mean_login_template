@@ -1,10 +1,11 @@
 <div class="login-page">
   <div class="form" ng-hide="identity.isAuthenticated()">
-    <form class="register-form" ng-show="createAccount">
-      <input type="text" placeholder="name" ng-model="name"/>
-      <input type="password" placeholder="password" ng-model="password"/>
-      <input type="text" placeholder="email address" ng-model="email"/>
-      <button>create</button>
+    <form class="register-form" ng-show="createAccount" name="signupForm">
+      <input type="text" placeholder="first name" ng-model="fname", required/>
+      <input type="text" placeholder="last name" ng-model="lname", required/>
+      <input type="password" placeholder="password" ng-model="password", required/>
+      <input type="text" placeholder="email address" ng-model="email", required/>
+      <button ng-click="signup()" ng-disabled="signupForm.$invalid">create</button>
       <p class="message">Already registered? <a href ng-click="createAccount = !createAccount">Sign In</a></p>
     </form>
     <form class="login-form" ng-show="!createAccount">
