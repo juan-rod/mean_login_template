@@ -1,4 +1,4 @@
-var app = angular.module("void", ['ngRoute','ui.bootstrap','ngFitText', 'ngResource']);
+var app = angular.module("mean_login", ['ngRoute','ui.bootstrap','ngFitText', 'ngResource']);
 
 
   app.config(['$routeProvider','$locationProvider',
