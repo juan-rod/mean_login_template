@@ -1,5 +1,7 @@
 # Walking Skeleton of a MEAN app with Login functionality
 
+#### npm install
+
 ### Login
 <dl>
   <dt>Create User</dt>
