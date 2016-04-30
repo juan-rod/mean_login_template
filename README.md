@@ -16,22 +16,25 @@
 </dl>
 
 ###Heroku Database
+<dl>
+  <dt>Create a database</dt>
+  <dd>create account with mlab.com</dd>
+  <dd>create a new database</dd>
+  <dd>choose amazon web services => single node => sandbox</dd>
+  <dd>click on created database</dd>
+  <dd>click user, add user, add the string mlab creates *'mongo ds047652.mlab.com:47652/void -u <dbuser> -p <dbpassword>'* to server/config/config.js production db</dd>
 
+  <dt>Ensure connection</dt>
+  <dd>in termainl ensure you're connected by typing *'mongo ds011228.mlab.com:11228/{db name} -u {voidUser} -p {voidUser#123}'*</dd>
 
-This Walking Skeleton contains all you need to connect to HEROKU.
-BUT 
-you still need to create a db with mlab.com and you need to connect to your server. also push up your key. follow the Deploying to Heroku section in the plural sight app for more information. or follow the following steps:
-1. create new database. 
-2. amazon web services=>plan=> single node => sandbox
-3. click on database
-4. click users => add users => add that info to the server.js connection string
-5. check to see it's connected by typing 'mongo ds011228.mlab.com:11228/{db name} -u {voidUser} -p {voidUser#123}'
-7. git status => add => commit
-8. heroku login
-9. heroku create
-10. heroku config:set NODE_ENV=production
-11. heroku ps:scale web=1
-12. git push heroku master
-13. heroku open
-14. Well, if you're working on a branch you actually need to run
-		git push heroku <your branch>:master
+  <dt>Connect to Heroku</dt>
+  <dd>In terminal
+  	⋅⋅* heroku login
+	⋅⋅* heroku create
+	⋅⋅* heroku config:set NODE_ENV=production
+	⋅⋅* heroku ps:scale web=1
+	⋅⋅* git push heroku master
+	⋅⋅* heroku open</dd>
+	<dd>While you continue to push to heroku: if you've changed branches in git, git push heroku <your branch>:master</dd>
+</dl>
+
