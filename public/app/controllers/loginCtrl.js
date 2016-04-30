@@ -18,6 +18,10 @@ app.controller('loginCtrl', function($scope, $http, $rootScope, loginNotifier, i
 		mvAuth.logoutUser().then(function() {
 			$scope.username = "";
 			$scope.password = "";
+			$scope.fname = "";
+			$scope.lname = "";
+			$scope.username = "";
+			$scope.email = "";
 			loginNotifier.notify("You have successfully signed out!");
 			$location.path('/')
 
@@ -28,6 +32,7 @@ app.controller('loginCtrl', function($scope, $http, $rootScope, loginNotifier, i
 		var newUserData = {
 			firstName: $scope.fname,
 			lastName: $scope.lname,
+			username: $scope.username,
 			password:$scope.password,
 			email:$scope.email
 		};

@@ -1,0 +1,10 @@
+<div>
+	<form class="register-form" name="profileForm">
+      <input type="text" placeholder="first name" ng-model="fname"/>
+      <input type="text" placeholder="last name" ng-model="lname"/>
+      <input type="text" placeholder="username" ng-model="username"/>
+      <input type="text" placeholder="email address" ng-model="email"/>
+      <input type="password" placeholder="password" ng-model="password"/>
+      <button ng-click="update()" ng-disabled="signupForm.$invalid">update</button>
+    </form>
+</div>

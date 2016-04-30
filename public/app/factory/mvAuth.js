@@ -42,6 +42,13 @@ app.factory('mvAuth', function($http, identity, $q, mvUser) {
               } else {
                 return $q.reject("not authorized");
               }
+		},
+		authorizeAuthenticatedUserForRoute: function() {
+			if(identity.isAuthenticated()) {
+                return true;
+              } else {
+                return $q.reject("not authorized");
+              }	
 		}
 	}
 })

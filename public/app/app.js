@@ -9,7 +9,12 @@ var app = angular.module("void", ['ngRoute','ui.bootstrap','ngFitText', 'ngResou
               auth: function(mvAuth) {
                 return mvAuth.authorizeCurrentUserForRoute('admin');              
               }
-            }
+            },
+            user: {
+              auth: function(mvAuth) {
+                return mvAuth.authorizeAuthenticatedUserForRoute();
+              }
+           } 
           };
 
       $routeProvider
@@ -22,6 +27,11 @@ var app = angular.module("void", ['ngRoute','ui.bootstrap','ngFitText', 'ngResou
           controller : "mvUserListCtrl",
           resolve: routeRoleChecks.admin
         }) 
+         .when('/profile',{
+          templateUrl : "/partials/account/profile.html",
+          controller : "profileCtrl",
+          resolve: routeRoleChecks.user
+        })
         .otherwise({
           redirectTo: '/'
         });
